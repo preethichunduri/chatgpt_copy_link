@@ -1,3 +1,12 @@
+from core.utilities.logging import *
+from core.database import db, Location, Condition, NSTrackingLevel1, NSTrackingLevel2, Action
+from core.audit_constants import AuditOps, AuditEvents
+from core.constants import TREND_UP, TREND_DOWN, TREND_FLAT, INSIGHT_ICON_HIGH_ENGAGEMENT_CAMPAIGN, \
+    INSIGHT_ICON_LOW_ENGAGEMENT_CAMPAIGN, INSIGHT_ICON_HIGH_ENGAGEMENT_NUDGE, INSIGHT_ICON_LOW_ENGAGEMENT_NUDGE, \
+    INSIGHT_ICON_NUDGE_TODAY, TREND_NO_SUFFICIENT_DATA, INSIGHT_STATIC_CARD_NUDGE_TODAY_TITLE, CONDITION_TYPES, SENT, \
+    INPROGRESS
+
+
 def messaging_reach_query(org_id,interval_high,interval_low,nudge_today=None,message_id=None,nudge_type=None,is_campaign=None):
     try:
         sql_query_params = {}
